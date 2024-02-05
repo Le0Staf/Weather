@@ -1,0 +1,19 @@
+html
+  head
+    style
+      include style.css
+    title Weather
+  body
+    div(id="main") 
+      - for (var i = 0; i < 40; i++)
+        div(class="weather-container" id=`${i}`) 
+          h1 Östersund
+          p(class="temp")= temperatureList[i][0] + "℃"
+          p(class="time")= temperatureList[i][1]
+    button(id="previous")
+      p <
+    button(id="next")
+      p >
+
+    script
+      include script.js
