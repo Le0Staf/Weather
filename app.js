@@ -58,9 +58,10 @@ request(url, function (err, response, body) {
       }
     }
 
-    days.forEach(function (x) { 
-      counts[x] = (counts[x] || 0) + 1;
-    });
+    for (i = 0; i < weather["list"].length; i++) {
+      let day = weather["list"][i]["dt_txt"].slice(8, 10);
+      counts[day] = (counts[day] || 0) + 1;
+    }
     console.log(counts);
 
     for (i = 0; i < counts[Object.keys(counts)[0]]; i++) {
