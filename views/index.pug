@@ -1,15 +1,65 @@
 html
   head
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
     style
       include style.css
     title Weather
-  body
+  body(id="body")
     div(id="main") 
-      - for (var i = 0; i < 40; i++)
-        div(class="weather-container" id=`${i}`) 
+        div(class="weather-container" id="0") 
           h1 Östersund
-          p(class="temp")= temperatureList[i][0] + "℃"
-          p(class="time")= temperatureList[i][1]
+          - let day1Date = day1Time[0].slice(0,10)
+          h1= day1Date
+          div
+            -for(i = 0; i < counts[Object.keys(counts)[0]]; i++)
+              span
+                p(class="temp")= day1[i] + "℃"
+                p(class="time")= day1Time[i].slice(10,20)
+    div(class="weather-container" id="1") 
+          h1 Östersund
+          - let day2Date = day2Time[0].slice(0,10)
+          h1= day2Date
+          div
+            -for(i = 0; i < 8; i++)
+              span
+                p(class="temp")= day2[i] + "℃"
+                p(class="time")= day2Time[i].slice(10,20)
+    div(class="weather-container" id="2") 
+          h1 Östersund
+          - let day3Date = day3Time[0].slice(0,10)
+          h1= day3Date
+          div
+            -for(i = 0; i < 8; i++)
+              span
+                p(class="temp")= day3[i] + "℃"
+                p(class="time")= day3Time[i].slice(10,20)
+    div(class="weather-container" id="3") 
+          h1 Östersund
+          - let day4Date = day4Time[0].slice(0,10)
+          h1= day4Date
+          div
+            -for(i = 0; i < 8; i++)
+              span
+                p(class="temp")= day4[i] + "℃"
+                p(class="time")= day4Time[i].slice(10,20)
+    div(class="weather-container" id="4") 
+          h1 Östersund
+          - let day5Date = day5Time[0].slice(0,10)
+          h1= day5Date
+          div
+            -for(i = 0; i < 8; i++)
+              span
+                p(class="temp")= day5[i] + "℃"
+                p(class="time")= day5Time[i].slice(10,20)
+    div(class="weather-container" id="5") 
+          h1 Östersund
+          - let day6Date = day6Time[0].slice(0,10)
+          h1= day6Date
+          div
+            -for (i = 0; i < (counts[Object.keys(counts)[5]] + counts[Object.keys(counts)[4]] + counts[Object.keys(counts)[3]] + counts[Object.keys(counts)[2]] + counts[Object.keys(counts)[1]] + counts[Object.keys(counts)[0]]) - (counts[Object.keys(counts)[4]] + counts[Object.keys(counts)[3]] + counts[Object.keys(counts)[2]] + counts[Object.keys(counts)[1]] + counts[Object.keys(counts)[0]]); i++)
+              span  
+                p(class="temp")= day6[i] + "℃"
+                p(class="time")= day6Time[i].slice(10, 20)
     button(id="previous")
       p <
     button(id="next")
