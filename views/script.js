@@ -18,6 +18,7 @@ document.getElementById("previous").addEventListener("click", function() {
     }
 });
 
+//Change day though keyboard
 document.getElementById("body").addEventListener("keydown", (event) => {
     if (event.isComposing || event.keyCode === 39) {
         if (x < 5) {
